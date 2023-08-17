@@ -13,8 +13,11 @@ public class CountingCharacters {
         String quote = input.nextLine();
 
         String lowercase = quote.toLowerCase();
+        String onlyLetters = lowercase.replaceAll("[^a-xA-Z]", "");
 
-        for (char c : lowercase.toCharArray()) {
+//        System.out.println(onlyLetters);
+
+        for (char c : onlyLetters.toCharArray()) {
             letters.put(c, letters.getOrDefault(c, 0) + 1);
         }
 
