@@ -12,9 +12,17 @@ public class CountingCharacters {
         System.out.println("Tell me a quote:");
         String quote = input.nextLine();
 
-        for (char c : quote.toCharArray()) {
+        String lowercase = quote.toLowerCase();
+
+        for (char c : lowercase.toCharArray()) {
             letters.put(c, letters.getOrDefault(c, 0) + 1);
         }
+
+
+//
+//        for (char c : quote.toCharArray()) {
+//            letters.put(c, letters.getOrDefault(c, 0) + 1);
+//        }
         System.out.println(letters);
     }
 
