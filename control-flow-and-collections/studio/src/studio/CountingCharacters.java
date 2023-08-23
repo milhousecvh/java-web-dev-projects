@@ -1,6 +1,7 @@
 package studio;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class CountingCharacters {
@@ -17,8 +18,8 @@ public class CountingCharacters {
 
 //        System.out.println(onlyLetters);
 
-        for (char c : onlyLetters.toCharArray()) {
-            letters.put(c, letters.getOrDefault(c, 0) + 1);
+        for (char letter : onlyLetters.toCharArray()) {
+            letters.put(letter, letters.getOrDefault(letter, 0) + 1);
         }
 
 
@@ -26,7 +27,9 @@ public class CountingCharacters {
 //        for (char c : quote.toCharArray()) {
 //            letters.put(c, letters.getOrDefault(c, 0) + 1);
 //        }
-        System.out.println(letters);
+        for(Map.Entry<Character, Integer> item: letters.entrySet()) {
+            System.out.println(item.getKey() + ": " + item.getValue());
+        }
     }
 
 }
