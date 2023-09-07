@@ -1,11 +1,11 @@
 package org.launchcode;
 
+import java.util.Objects;
+
 public class MenuItem {
     private String name;
     private double price;
     private String description;
-    private MenuItemCategory category;
-    private boolean isNew;
 
     public String getName() {
         return name;
@@ -14,6 +14,7 @@ public class MenuItem {
     public void setName(String name) {
         this.name = name;
     }
+
     public MenuItemCategory getCategory() {
         return category;
     }
@@ -22,6 +23,8 @@ public class MenuItem {
         this.category = category;
     }
 
+    private MenuItemCategory category;
+    private boolean isNew;
 
     public MenuItem(String name, double price, String description, MenuItemCategory category, boolean isNew) {
         this.name = name;
@@ -59,10 +62,20 @@ public class MenuItem {
 
     @Override
     public String toString() {
-
-        return  this.name + ":" +
-                 this.category + "\n" +
-                 this.description + "\n" +
-               "New Item: " + this.isNew + "," + this.price + "\n";
+        return this.name + ":" +
+                this.category + "\n" +
+                this.description + "\n" +
+                this.price + "\n";
     }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MenuItem menuItem = (MenuItem) o;
+        return Objects.equals(name, menuItem.name);
+    }
+
 }
+
